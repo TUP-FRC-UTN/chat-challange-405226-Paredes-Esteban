@@ -1,0 +1,16 @@
+<div>
+    <h2>Sala de Chat</h2>
+    <ol>
+        <h2>Conversación</h2>
+        @for (mensaje of listaMensajes; track $index) {
+            <li>
+                <h4>{{mensaje.user}}:</h4>
+                <p>{{mensaje.message}}</p>
+            </li>
+        }
+    </ol>
+    <div style="border-radius: 2px; border: solid black;" class="d-flex">
+        <app-mensaje-usuario [currentUser]='user1' (mensajeToSave)="recibirMensaje($event)"></app-mensaje-usuario>
+        <app-mensaje-usuario [currentUser]="user2" (mensajeToSave)="recibirMensaje($event)"></app-mensaje-usuario>    
+    </div>
+</div>
