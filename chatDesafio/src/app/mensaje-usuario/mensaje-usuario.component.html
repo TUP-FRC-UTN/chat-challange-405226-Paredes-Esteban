@@ -1,6 +1,11 @@
-<div style="border-radius: 2px; border: solid black;">
-    <h2>Usuario: {{currentUser}}</h2>
-    <h3>Mensaje</h3>
-    <textarea name="" id="" [(ngModel)]="txtMensaje"></textarea>
-    <button (click)="guardarMensaje($event)">Guardar</button>
+<div class="m-3 p-1" style="width: 40rem;">
+    <div class="card">
+        <h5 class="m-2 p-2">Usuario: {{currentUser}}</h5>
+        <hr>
+        <div>
+            <h5 class="m-2 p-2">Mensaje</h5>
+            <textarea class="form-control m-2" style="width: 38rem" [(ngModel)]="txtMensaje"></textarea>
+            <button class="btn btn-primary m-2" (click)="guardarMensaje($event)">Guardar</button>
+        </div>
+    </div>
 </div>

@@ -1,16 +1,19 @@
-<div>
-    <h2>Sala de Chat</h2>
-    <ol>
-        <h2>Conversación</h2>
-        @for (mensaje of listaMensajes; track $index) {
-            <li>
-                <h4>{{mensaje.user}}:</h4>
-                <p>{{mensaje.message}}</p>
-            </li>
-        }
-    </ol>
-    <div style="border-radius: 2px; border: solid black;" class="d-flex">
-        <app-mensaje-usuario [currentUser]='user1' (mensajeToSave)="recibirMensaje($event)"></app-mensaje-usuario>
-        <app-mensaje-usuario [currentUser]="user2" (mensajeToSave)="recibirMensaje($event)"></app-mensaje-usuario>    
+<div class="m-4 p-2 card" style="background-color: lightgray;">
+    <h5>Sala de Chat</h5>
+    <hr>
+    <div class="p-2" style="background-color: white;">
+        <h4>Conversación</h4>
+        <ol>
+            @for (mensaje of listaMensajes; track $index) {
+                <li class="d-flex">
+                    <p>{{mensaje.user}}:</p>
+                    <p>{{mensaje.message}}</p>
+                </li>
+            }
+        </ol>
     </div>
+</div>
+<div class="d-flex">
+    <app-mensaje-usuario [currentUser]='user1' (mensajeToSave)="recibirMensaje($event)"></app-mensaje-usuario>
+    <app-mensaje-usuario [currentUser]="user2" (mensajeToSave)="recibirMensaje($event)"></app-mensaje-usuario>    
 </div>
